@@ -53,7 +53,7 @@ def index():
 
         pred = model.predict(input_data)[0]
         prob = model.predict_proba(input_data)[0]
-        result = f"{'✅ NO LIVER DISEASE' if pred == 1 else '❌ LIVER DISEASE PRESENT'} ({prob[pred]*100:.2f}% confidence)"
+        result = f"{' NO LIVER DISEASE' if pred == 1 else ' LIVER DISEASE PRESENT'} ({prob[pred]*100:.2f}% confidence)"
 
         return render_template("index.html", result=result)
 
